@@ -1,0 +1,19 @@
+{
+  "name": "weatherBot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RP-3 <sarith21@gmail.com> (http://suchisthepowerofjs.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "knex": "^0.9.0",
+    "moment": "^2.10.6",
+    "pg": "^4.4.3",
+    "request-promise": "^1.0.2",
+    "semver": "^5.1.0"
+  }
+}
