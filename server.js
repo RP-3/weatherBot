@@ -103,6 +103,8 @@ setInterval(function(){
       })
       .then(function(timeString){
 
+        var scrapedResp;
+
         var isBeforeYesterday = moment(new Date(timeString))
         .isBefore(moment().startOf('day').subtract(1, 'days'));
 
@@ -118,15 +120,17 @@ setInterval(function(){
           //get the actual weather for that day
           scraper.getActualOnDay({
             lat: location.latitude,
-            long: location.long,
+            long: location.longitude,
             time: middayYesterday
           })
           //log them
           .then(function(resp){
 
+            scrapedResp = resp;
+
             return db.dailyActuals.add({
               location: location.name,
-              data: resp.daily
+              data: scrapedResp.daily
             });
 
           })
@@ -134,7 +138,7 @@ setInterval(function(){
 
             return db.hourlyActuals.add({
               location: location.name,
-              data: resp.hourly
+              data: scrapedResp.hourly
             });
 
           })
@@ -151,4 +155,4 @@ setInterval(function(){
 
   });
 
-}, 3600000) //every hour
+}, 3600000); //every hour
