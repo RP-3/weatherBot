@@ -2,7 +2,8 @@ var config = {};
 
 config.db = {
   host: '127.0.0.1',
-  user: 'sarith21',
+  user: 'pi',
+  password: 'pi',
   database: 'weatherbot'
 };
 
