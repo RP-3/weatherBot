@@ -5,6 +5,7 @@ var knex = require('knex')({
   connection: {
     host     : config.host,
     user     : config.user,
+    password : config.password,
     database : config.database
   }
 });
